@@ -238,7 +238,7 @@ const weaponsArray = [
 function randomSelector(array){
     let randomItem = array[Math.floor(Math.random()*array.length)];
     return randomItem
-}
+} 
 
 function pickMistery() {
     let random1= randomSelector(charactersArray);
