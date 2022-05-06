@@ -252,11 +252,8 @@ function pickMistery() {
 
 //Iteración 3 - Descubrir el misterio
 
-function revealMistery() {
-    let killer = charactersArray[2];
-    let weapon=weaponsArray[4];
-    let room= roomsArray[5] ;
-    let reveal =[killer, weapon, room]
+function revealMistery(array) {
+    let reveal =array; //Porque no puedo llamar directamente a array[0] en el return??
     return reveal[0].first_name + " " + reveal[0].last_name + " killed Mr.Boddy using the " + reveal[1].name + " in the " + reveal[2].name +"!!!!"
 }
 
