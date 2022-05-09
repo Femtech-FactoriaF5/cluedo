@@ -151,11 +151,27 @@ Other option
 */
 
 // Rooms' Collection
-const roomsArray = ["Dinning Room", "Conservatory", "Kitchen", "Study", "Library", "Billiard Room", "Lounge", "Ballroom", "Hall", "Spa", "Living Room",  "Observatory", "Theater", "Guest House","Patio"];
+const roomsArray = [
+    {name: "Dinning Room"},
+    {name: "Conservatory"},
+    {name: "Kitchen"},
+    {name: "Study"},
+    {name: "Library"},
+    {name: "Billiard Room"},
+    {name: "Lounge"},
+    {name: "Ballroom"},
+    {name: "Hall"},
+    {name: "Spa"},
+    {name: "Living Room"},
+    {name: "Observatory"},
+    {name: "Theater"},
+    {name: "Guest House"},
+    {name: "Patio"}
+];
 
 /*
-Other option 
-    const roomsArray = [{name: "Dinning Room"}, {}]; 
+Other option  *** Pero es si no estuviera preestipulado que fuera con el name de propiedad, podría utilizarse la forma quehay a continuación, y al llamarla en la última función se eliminaria el .name
+    const roomsArray = ["Dinning Room", ...]; 
 */
 
 
@@ -210,7 +226,7 @@ Other option
         return [deckOfCards1, deckOfCards2,deckOfCards3];
     
         /* 
-            Op-1?
+            Op-1
                 let mistery =[
                 randomSelector(charactersArray), 
                 randomSelector(weaponsArray),
@@ -218,25 +234,17 @@ Other option
                 ];
                 return mistery;
             
-            Op-2?
+            Op-2
                 return [randomSelector(charactersArray), randomSelector(weaponsArray),randomSelector(roomsArray)];
         */
     }  
 
     
-
 //Iteración 3 - Descubrir el misterio
-function revealMistery (pickMistery){
-    let resolved = pickMistery.first_name + " " + pickMistery.last_name + " killed Mr.Boddy using the "+ pickMistery.deckOfCards2 + " in the " + pickMistery.deckOfCards3 + "!!!!";
-    return resolved;
-
-     /* 
-    Op- 1?
-        return `${pickMistery.first_name} ${pickMistery.last_name} killed Mr.Boddy using the ${pickMistery.deckOfCards2} in the ${pickMistery.deckOfCards3}!!!!`;
-    */
+function revealMistery (mistery){
+    return `${mistery[0].first_name} ${mistery[0].last_name} killed Mr.Boddy using the ${mistery[1].name} in the ${mistery[2].name}!!!!`
 }
   
 //"Victor Plum killed Mr.Boddy using the poison in the Billiard Room!!!!"  [0][1][3]
 
-   
-
+console.log(revealMistery(pickMistery()));
